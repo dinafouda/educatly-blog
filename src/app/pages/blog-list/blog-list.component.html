@@ -1,0 +1,40 @@
+<div class="container py-5">
+  <div class="text-center header-section">
+    <p class="subtitle px-3 py-2 m-4 d-inline">Our blog</p>
+    <h1 class="title my-4">Resources and insights</h1>
+    <p class="description my-4">
+      The latest industry news, interviews, technologies, and resources.
+    </p>
+    <div class="d-flex justify-content-center">
+      <div class="search-wrapper mb-5 mt-4">
+        <input type="text" class="form-control search-input ps-5" placeholder="Search" aria-label="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  @if (isLoading) {
+  <app-loading-indicator></app-loading-indicator>
+  }
+
+  <!-- Error Message -->
+  @if (hasError) {
+  <app-error-message message="Failed to load blog posts."></app-error-message>
+  }
+
+  <!-- Blog Posts -->
+  @if (!isLoading && !hasError) {
+  <div class="row">
+    @for (post of posts; track $index) {
+    <app-blog-item [post]="post" class="col-lg-4 col-md-6 mb-4"></app-blog-item>
+    }
+  </div>
+  }
+
+  <div class="text-center mt-4">
+    <button class="btn py-2 px-3 rounded-2 show-more-btn" (click)="showMore()" [disabled]="isLoading || hasError">
+      Show More
+    </button>
+  </div>
+</div>

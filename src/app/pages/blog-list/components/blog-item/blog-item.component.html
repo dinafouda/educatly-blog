@@ -1,0 +1,22 @@
+<div class="card bg-white shadow-sm h-100 p-4">
+  <div class="image-wrapper">
+    <img [src]="post.cover_image || 'https://via.placeholder.com/350x150'" class="card-img" [alt]="post.title" />
+  </div>
+  <div class="card-body">
+    <p class="category my-3">{{ post.tag_list[0] }}</p>
+    <h5 class="card-title d-flex justify-content-between">
+      {{ post.title }}
+      <a [href]="post.link" class="ms-1 text-decoration-none external-link" target="_blank" rel="noopener noreferrer"><i
+          class="fas fa-arrow-up-right-from-square"></i></a>
+    </h5>
+    <p class="description mb-4">{{ post.description }}</p>
+    <div class="author d-flex ">
+      <img [src]="post.user.profile_image || 'https://via.placeholder.com/40'" alt="{{ post.user.name }}"
+        class="rounded-circle" />
+      <span class="author-info">
+        <p class="p-0 m-0">{{ post.user.name }}</p>
+        <p class="p-0 m-0">{{ post.created_at | date: 'MMM dd, YYYY'}}</p>
+      </span>
+    </div>
+  </div>
+</div>

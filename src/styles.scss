@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f9f5ff;
+  font-family: "Inter" !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+.btn-primary:hover {
+  background-color: #3b7fc4;
+}
+
+
+
+
+
+
+
+
+
+

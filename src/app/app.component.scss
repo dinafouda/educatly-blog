@@ -1,0 +1,69 @@
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bands {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: skewY(-12deg);
+
+  &.bands-left {
+    left: 0;
+    top: 66%;
+    transform: translateY(-50%) skewY(-12deg);
+    align-items: flex-end;
+  }
+
+  &.bands-right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) skewY(-12deg);
+    align-items: flex-start;
+
+    .band {
+      width: 45vw !important;
+    }
+  }
+}
+
+.band {
+  width: 35vw;
+  height: 7vh;
+
+  &.color-primary {
+    background-color: #d6bbfb;
+  }
+
+  &.color-secondary {
+    background-color: #e9d7fe;
+  }
+
+  &.color-tertiary {
+    background-color: #f4ebff;
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .band {
+    width: 50vw;
+    height: 5vh;
+  }
+
+  .bands-right {
+    top: 70% !important;
+  }
+}
